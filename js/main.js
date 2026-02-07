@@ -312,37 +312,23 @@ function handleSubmit(e) {
     submitBtn.textContent = 'Отправка...';
     submitBtn.disabled = true;
 
-    // Реальная отправка на будущий бэкенд
-    fetch('/api/send-message', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (response.ok) {
-                form.innerHTML = `
-                <div style="text-align: center; padding: 30px 0;">
-                    <div style="font-size: 3rem; color: #4A5D44; margin-bottom: 20px;">✓</div>
-                    <h3 style="font-family: 'Forum', serif; font-size: 1.5rem; color: #2C2C2C; margin-bottom: 15px;">Заявка отправлена!</h3>
-                    <p style="color: #6B6B6B;">Мы свяжемся с вами в ближайшее время.</p>
-                </div>
-            `;
-                setTimeout(() => {
-                    // TODO: Замените ссылку на актуальную (сообщение в Telegram)
-                    window.location.href = 'https://t.me/mariettamirranika';
-                }, 2000);
-            } else {
-                throw new Error('Ошибка сервера');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Извините, произошла ошибка. Попробуйте еще раз или свяжитесь с нами напрямую.');
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
+    // Имитация отправки (так как нет бэкенда на GitHub Pages)
+    setTimeout(() => {
+        // Успешная отправка
+        form.innerHTML = `
+            <div style="text-align: center; padding: 30px 0;">
+                <div style="font-size: 3rem; color: #4A5D44; margin-bottom: 20px;">✓</div>
+                <h3 style="font-family: 'Forum', serif; font-size: 1.5rem; color: #2C2C2C; margin-bottom: 15px;">Заявка отправлена!</h3>
+                <p style="color: #6B6B6B;">Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+        `;
+
+        // Переадресация через 2 секунды
+        setTimeout(() => {
+            window.location.href = 'https://t.me/mariettamirranika';
+        }, 2000);
+
+    }, 1500); // Задержка 1.5 сек для имитации работы
 }
 
 // ============================================
