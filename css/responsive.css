@@ -1,0 +1,359 @@
+/* ============================================
+   MOBILE RESPONSIVENESS & PREMIUM OPTIMIZATION
+   ============================================ */
+
+@media (max-width: 992px) {
+    :root {
+        --container-padding: 20px;
+    }
+
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    /* Программа - 2 колонки на планшете */
+    .program__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Атмосфера - меньше колонок */
+    .atmosphere__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 250px);
+    }
+
+    .atmosphere__item--large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .atmosphere__item--wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 16px;
+    }
+
+    body {
+        font-size: 15px;
+        /* Чуть меньше текст на мобильных */
+        text-align: center;
+        /* Центрируем весь базовый текст */
+    }
+
+    /* Общие отступы секций */
+    section {
+        padding: 60px 0 !important;
+        /* Force override desktop padding */
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        /* Явное центрирование заголовков */
+    }
+
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        /* Центрируем декоративную линию */
+    }
+
+    /* HERO Section */
+    .hero__content {
+        padding-top: 80px;
+        /* Учет статус бара браузера */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Центрируем флекс-контент */
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .hero__line {
+        width: 80px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* FOR WHOM Section */
+    .for-whom__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .for-whom__image {
+        order: -1;
+        /* Картинка сверху */
+    }
+
+    .for-whom__photo-placeholder {
+        aspect-ratio: 4/3;         /* Более квадратное для лучшей видимости */
+        min-height: 280px;         /* Гарантированная высота */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .for-whom__content {
+        text-align: center;
+    }
+
+    .for-whom__list {
+        text-align: left;
+        /* Списки оставляем слева для читаемости, но блок можно центрировать */
+        display: inline-block;
+        /* Чтобы список не растягивался */
+    }
+
+    /* PROGRAM Section */
+    .program__cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .program-card {
+        padding: 30px 24px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* AUTHOR Section */
+    .author__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .author__photo-placeholder {
+        aspect-ratio: 1/1;
+        border-radius: 20px;
+        /* Убираем сложные скругления */
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .author__content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .author__text {
+        text-align: center;
+    }
+
+    .author__stats {
+        flex-direction: row;
+        /* Оставляем в строку, цифры небольшие */
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .author__stat-number {
+        font-size: 2.5rem;
+    }
+
+    .author__stat-label {
+        text-align: center;
+    }
+
+    /* ATMOSPHERE Section - Вертикальный стек на мобильных */
+    .atmosphere__grid {
+        display: flex;
+        flex-direction: column;    /* Вертикальный стек */
+        gap: 16px;
+        overflow: visible;         /* Убираем горизонтальный скролл */
+        height: auto;
+        grid-template-rows: unset;
+    }
+
+    .atmosphere__item {
+        width: 100%;
+        height: 280px;
+        min-width: unset;
+        flex-shrink: unset;
+        scroll-snap-align: unset;
+    }
+
+    .atmosphere__item--large,
+    .atmosphere__item--wide {
+        grid-column: auto;
+        grid-row: auto;
+        height: 320px;             /* Чуть выше для акцентных фото */
+    }
+
+    /* Скрываем скроллбар но оставляем функционал */
+    .atmosphere__grid::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .atmosphere__grid::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    .atmosphere__grid::-webkit-scrollbar-thumb {
+        background: var(--color-gold);
+        border-radius: 4px;
+        background-clip: padding-box;
+    }
+
+    /* RESULTS Section */
+    .results__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .result-card {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* OFFER Section */
+    .offer__content {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .offer__title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .offer__details {
+        align-items: center;
+    }
+
+    .offer__item {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .offer__price {
+        font-size: 3.5rem;
+    }
+
+    /* FOOTER */
+    .footer__links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__content {
+        text-align: center;
+    }
+
+    /* MODAL */
+    .modal__content {
+        padding: 40px 24px;
+        width: 95%;
+        text-align: center;
+    }
+
+    .modal__title {
+        text-align: center;
+    }
+
+    .modal__legal {
+        text-align: left;
+        /* Юридический текст лучше оставить слева или по центру? Обычно слева удобнее читать чекбокс */
+        align-items: center;
+        /* Но если сам чекбокс, то по центру */
+    }
+
+    .checkbox-wrapper {
+        text-align: left;
+        /* Текст согласия лучше читать слева направо */
+    }
+}
+
+/* ============================================
+   PREMIUM UI ENHANCEMENTS (Mobile & Desktop)
+   псевдо-класс .premium-upgrade будет маркером
+   ============================================ */
+
+/* Улучшенные тени */
+.program-card,
+.result-card,
+.modal__content {
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 0 0 1px rgba(212, 175, 55, 0.1);
+    /* Тонкая золотая обводка */
+}
+
+/* Glassmorphism Refined */
+.program-card {
+    background: rgba(255, 255, 255, 0.85);
+    /* Чуть плотнее */
+    backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Typography Refinement */
+.hero__subtitle,
+.for-whom__intro,
+.program__intro {
+    letter-spacing: -0.01em;
+    /* Tighten slightly for modern feel */
+}
+
+/* Better gradients */
+.hero {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(200, 117, 86, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #F9F7F2 0%, #EDE8DC 100%);
+}
+
+/* Sticky Button Mobile CSS Only approach (Replacement for JS) */
+.mobile-sticky-btn {
+    display: none;
+    /* Desktop default */
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-btn {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        z-index: 99;
+        animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-sticky-btn .btn {
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
